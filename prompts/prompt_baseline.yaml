@@ -1,0 +1,123 @@
+no_image_no_gt: |
+  You are an impartial diagram grader. Your task is to judge whether the student's hand-drawn diagram correctly solves the problem according to the task requirements and domain rules.
+
+  Task:
+  [[QUERY_EN]]
+
+  Student's Answer:
+  <image_0>
+
+  First decide whether the student's answer is correct. Because the drawing is hand-drawn, ignore minor distortions or imprecise shapes; focus only on whether the structure, relationships, and intended semantics satisfy the task. If the answer is incorrect, classify all errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No extra text outside JSON.
+
+no_image_with_gt: |
+  You are an impartial diagram grader. Your task is to judge whether the student's hand-drawn diagram correctly solves the problem according to the task requirements and domain rules. Use the reference diagram as the canonical solution for the task. Evaluate correctness based on semantic and structural consistency with the reference, not visual or stylistic similarity.
+
+  Task:
+  [[QUERY_EN]]
+
+  Reference Answer:
+  <image_0>
+
+  Student's Answer:
+  <image_1>
+
+  First decide whether the student's answer is correct. Because the drawing is hand-drawn, ignore minor distortions or imprecise shapes; focus only on whether the structure, relationships, and intended semantics satisfy the task. If the answer is incorrect, classify all errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No extra text outside JSON.
+
+image_no_gt: |
+  You are an impartial diagram grader. Your task is to judge whether the student's hand-drawn diagram correctly solves the problem according to the task requirements and domain rules.
+
+  Question Diagram:
+  <image_0>
+
+  Task:
+  [[QUERY_EN]]
+
+  Student's Answer:
+  <image_1>
+
+  First decide whether the student's answer is correct. Because the drawing is hand-drawn, ignore minor distortions or imprecise shapes; focus only on whether the structure, relationships, and intended semantics satisfy the task. If the answer is incorrect, classify all errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No extra text outside JSON.
+
+image_with_gt: |
+  You are an impartial diagram grader. Your task is to judge whether the student's hand-drawn diagram correctly solves the problem according to the task requirements and domain rules. Use the reference diagram as the canonical solution for the task. Evaluate correctness based on semantic and structural consistency with the reference, not visual or stylistic similarity.
+
+  Question Diagram:
+  <image_0>
+
+  Task:
+  [[QUERY_EN]]
+
+  Reference Answer:
+  <image_1>
+
+  Student's Answer:
+  <image_2>
+
+  First decide whether the student's answer is correct. Because the drawing is hand-drawn, ignore minor distortions or imprecise shapes; focus only on whether the structure, relationships, and intended semantics satisfy the task. If the answer is incorrect, classify all errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No extra text outside JSON.

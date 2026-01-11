@@ -1,0 +1,149 @@
+no_image_no_gt: |
+  You are an impartial diagram grader. Follow the rubric below to determine whether the student's hand-drawn diagram correctly solves the task.
+
+  RUBRIC — A correct diagram MUST:
+  1. Include all required task elements.
+  2. Preserve correct spatial, structural, and logical relationships.
+  3. Convey domain-appropriate semantics (geometry, physics, charts, flowcharts, etc.).
+  4. Be complete and coherent, even with typical hand-drawn imperfections.
+
+  A diagram is incorrect if it violates any required structural, semantic, or logical condition.
+
+  Task:
+  [[QUERY_EN]]
+
+  Student's Answer:
+  <image_0>
+
+  Evaluate correctness using the rubric. Ignore normal hand-drawn inaccuracies. If incorrect, classify ALL errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No extra text outside JSON.
+
+no_image_with_gt: |
+  You are an impartial diagram grader. Follow the rubric below to determine whether the student's hand-drawn diagram correctly solves the task. Use the reference diagram as the canonical solution. Evaluate correctness based on semantic and structural consistency, not visual similarity.
+
+  RUBRIC — A correct diagram MUST:
+  1. Preserve the key structural, relational, and semantic elements present in the reference diagram.
+  2. Include all task-required components and relationships.
+  3. Convey domain-appropriate semantics (geometry, physics, charts, flowcharts, etc.).
+  4. Be acceptable even with different layout or style, as long as it is semantically equivalent.
+
+  Task:
+  [[QUERY_EN]]
+
+  Reference Answer:
+  <image_0>
+
+  Student's Answer:
+  <image_1>
+
+  Evaluate correctness using the rubric. Ignore normal hand-drawn inaccuracies. If incorrect, classify ALL errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No extra text outside JSON.
+
+image_no_gt: |
+  You are an impartial diagram grader. Follow the rubric below to determine whether the student's hand-drawn diagram correctly solves the task.
+
+  RUBRIC — A correct diagram MUST:
+  1. Include all required task elements.
+  2. Preserve correct spatial, structural, and logical relationships.
+  3. Convey domain-appropriate semantics (geometry, physics, charts, flowcharts, etc.).
+  4. Be complete and coherent, even with typical hand-drawn imperfections.
+
+  Question Diagram:
+  <image_0>
+
+  Task:
+  [[QUERY_EN]]
+
+  Student's Answer:
+  <image_1>
+
+  Evaluate correctness using the rubric. Ignore normal hand-drawn inaccuracies. If incorrect, classify ALL errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No extra text outside JSON.
+
+image_with_gt: |
+  You are an impartial diagram grader. Follow the rubric below to determine whether the student's hand-drawn diagram correctly solves the task. Use the reference diagram as the canonical solution, and evaluate semantic and structural consistency rather than visual similarity.
+
+  RUBRIC — A correct diagram MUST:
+  1. Preserve the key structural, relational, and semantic elements present in the reference.
+  2. Include all task-critical components and relationships.
+  3. Convey domain-appropriate semantics (geometry, physics, charts, flowcharts, etc.).
+  4. Allow visually different layouts if they remain topologically or semantically equivalent.
+
+  Question Diagram:
+  <image_0>
+
+  Task:
+  [[QUERY_EN]]
+
+  Reference Answer:
+  <image_1>
+
+  Student's Answer:
+  <image_2>
+
+  Evaluate correctness using the rubric. Ignore normal hand-drawn inaccuracies. If incorrect, classify ALL errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No extra text outside JSON.

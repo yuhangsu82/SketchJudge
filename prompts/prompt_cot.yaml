@@ -1,0 +1,163 @@
+no_image_no_gt: |
+  You are an impartial diagram grader. Carefully evaluate the student's hand-drawn diagram using step-by-step internal reasoning before producing the final JSON output.
+
+  INTERNAL REASONING INSTRUCTIONS (do not reveal):
+  - First interpret the task requirements.
+  - Then analyze the student's diagram step by step:
+    1. Identify all required elements.
+    2. Check structural and spatial relationships.
+    3. Evaluate domain-specific correctness (geometry, physics, charts, flowcharts, etc.).
+    4. Identify any conceptual or procedural flaws.
+  - Decide correctness only after completing all reasoning steps. Ignore normal hand-drawn inaccuracies.
+  - Do NOT reveal the reasoning; output only the final JSON result.
+
+  Task:
+  [[QUERY_EN]]
+
+  Student's Answer:
+  <image_0>
+
+  If the answer is incorrect, classify ALL errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No internal reasoning or explanations outside JSON.
+
+no_image_with_gt: |
+  You are an impartial diagram grader. Carefully evaluate the student's hand-drawn diagram using step-by-step internal reasoning before producing the final JSON output. Use the reference diagram as the canonical solution.
+
+  INTERNAL REASONING INSTRUCTIONS (do not reveal):
+  - First interpret the task requirements and the reference diagram.
+  - Then analyze the student's diagram step by step:
+    1. Identify all required elements.
+    2. Check structural and spatial relationships.
+    3. Evaluate domain-specific correctness (geometry, physics, charts, flowcharts, etc.).
+    4. Determine semantic equivalence to the reference (not stylistic similarity) and identify any conceptual or procedural flaws.
+  - Decide correctness only after completing all reasoning steps. Ignore normal hand-drawn inaccuracies.
+  - Do NOT reveal the reasoning; output only the final JSON result.
+
+  Task:
+  [[QUERY_EN]]
+
+  Reference Answer:
+  <image_0>
+
+  Student's Answer:
+  <image_1>
+
+  If the answer is incorrect, classify ALL errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No internal reasoning or explanations outside JSON.
+
+image_no_gt: |
+  You are an impartial diagram grader. Carefully evaluate the student's hand-drawn diagram using step-by-step internal reasoning before producing the final JSON output.
+
+  INTERNAL REASONING INSTRUCTIONS (do not reveal):
+  - First interpret the task requirements and the question diagram.
+  - Then analyze the student's diagram step by step:
+    1. Identify all required elements.
+    2. Check structural and spatial relationships.
+    3. Evaluate domain-specific correctness (geometry, physics, charts, flowcharts, etc.).
+    4. Identify any conceptual or procedural flaws, accounting for constraints implied by the question diagram.
+  - Decide correctness only after completing all reasoning steps. Ignore normal hand-drawn inaccuracies.
+  - Do NOT reveal the reasoning; output only the final JSON result.
+
+  Question Diagram:
+  <image_0>
+
+  Task:
+  [[QUERY_EN]]
+
+  Student's Answer:
+  <image_1>
+
+  If the answer is incorrect, classify ALL errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No internal reasoning or explanations outside JSON.
+
+image_with_gt: |
+  You are an impartial diagram grader. Carefully evaluate the student's hand-drawn diagram using step-by-step internal reasoning before producing the final JSON output. Use the reference diagram as the canonical solution.
+
+  INTERNAL REASONING INSTRUCTIONS (do not reveal):
+  - First interpret the task requirements, the question diagram, and the reference diagram.
+  - Then analyze the student's diagram step by step:
+    1. Identify all required elements.
+    2. Check structural and spatial relationships.
+    3. Evaluate domain-specific correctness (geometry, physics, charts, flowcharts, etc.).
+    4. Determine semantic equivalence to the reference (not stylistic similarity), accounting for constraints implied by the question diagram, and identify any conceptual or procedural flaws.
+  - Decide correctness only after completing all reasoning steps. Ignore normal hand-drawn inaccuracies.
+  - Do NOT reveal the reasoning; output only the final JSON result.
+
+  Question Diagram:
+  <image_0>
+
+  Task:
+  [[QUERY_EN]]
+
+  Reference Answer:
+  <image_1>
+
+  Student's Answer:
+  <image_2>
+
+  If the answer is incorrect, classify ALL errors using exactly the labels listed below (no new labels, no paraphrasing):
+  [[TAXONOMY_BULLETED]]
+
+  OUTPUT REQUIREMENTS — return ONLY a valid JSON object:
+  {
+    "is_correct": true | false,
+    "error_count": <integer>,
+    "error_list": [
+      {
+        "error_type": "one of the error labels",
+        "error_description_en": "<brief, precise explanation in English (<= 30 words)>"
+      }
+    ]
+  }
+  Constraints:
+  - If "is_correct" is true, then "error_count"=0 and "error_list"=[]
+  - "error_count" MUST equal len("error_list")
+  - No internal reasoning or explanations outside JSON.
