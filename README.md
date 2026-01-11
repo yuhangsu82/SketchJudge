@@ -198,15 +198,35 @@ Evaluation utilities are provided in `eval.py`.
 
 Metrics include:
 
-- ✅ **Binary correctness metrics**: Accuracy, Precision, Recall, F1, MCC
-- ✅ **Error-type metrics**: *Example-based F1* (`F1e_example`), computed **only when both gold and predicted labels are incorrect**
+- ✅ **Binary correctness metrics**: Accuracy, MCC, etc.
+- ✅ **Error-type metrics**: *Example-based F1*, computed **only when both gold and predicted labels are incorrect**
 
-Basic usage:
+A typical evaluation workflow:
 
 ```python
-label_index = {rec["answer_id"]: rec for rec in gt_records}
-results = load_jsonl("outputs/gpt_preds.jsonl")
-evaluate_all(results, label_index)
+from eval import evaluate_all, load_taxonomy
+import json
+
+# Load dataset and ground truth
+with open("./data/SketchJudge_v1/master.json", "r", encoding="utf-8") as f:
+    dataset = json.load(f)
+annotations = dataset.get("annotations", [])
+label_index = {rec["answer_id"]: rec for rec in annotations}
+
+# Load model predictions
+with open("./output/result.jsonl", "r", encoding="utf-8") as f:
+    results = [json.loads(line) for line in f if line.strip()]
+
+# Load taxonomy and run evaluation
+taxonomy = load_taxonomy("./data/SketchJudge_v1/taxonomy.json")
+
+evaluate_all(
+    results=results,
+    label_index=label_index,
+    taxonomy=taxonomy,
+    strict_for_errors=True,
+    use_global_label_space=True
+)
 ```
 
 ---
