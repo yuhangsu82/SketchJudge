@@ -661,7 +661,7 @@ def evaluate_all(
 
 def main():
     dataset_path = "./data/SketchJudge_v1/master.json"
-    results_path = "./output/xxx.jsonl"
+    results_path = "./output/result.jsonl"
     taxonomy_path  = "./data/SketchJudge_v1/taxonomy.json"
 
     # Load dataset (GT)
