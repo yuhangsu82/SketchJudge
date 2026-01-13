@@ -246,16 +246,20 @@ Recommendations:
 
 The **SketchJudge dataset** can be downloaded from the following link:  [Dataset Download](https://pan.baidu.com/s/14yVqbQiyG5rNaM9F_nK-SQ), the extraction code is gbmw.
 
-<!-- ---
+---
 
 ## 📚 Citation
 
 If you use **SketchJudge** in your work, please cite:
 
 ```bibtex
-@article{sketchjudge2026,
-  title={SketchJudge: A Diagnostic Benchmark for Grading Hand-drawn Diagrams with Multimodal Large Language Models},
-  author={...},
-  year={2026}
+@misc{su2026sketchjudgediagnosticbenchmarkgrading,
+      title={SketchJudge: A Diagnostic Benchmark for Grading Hand-drawn Diagrams with Multimodal Large Language Models}, 
+      author={Yuhang Su and Mei Wang and Yaoyao Zhong and Guozhang Li and Shixing Li and Yihan Feng and Hua Huang},
+      year={2026},
+      eprint={2601.06944},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2601.06944}, 
 }
-``` -->
+```
